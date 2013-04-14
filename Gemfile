@@ -23,7 +23,11 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+# jQuery
 gem 'jquery-rails'
+
+# Twitter Bootstrap
+gem 'bootstrap-sass'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
