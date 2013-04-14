@@ -23,6 +23,10 @@
     <%= f.label :end %><br />
     <%= f.datetime_select :end %>
   </div>
+  <div class="field">
+    <%= f.label :location_id %><br />
+    <%= f.select(:location_id,Location.all,:prompt => true) %>
+  </div>
   <br />
   <div class="actions">
     <%= f.submit %>
