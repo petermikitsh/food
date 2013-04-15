@@ -3,4 +3,3 @@
 /tmp/*
 /db/*.sqlite3
 .project
-/config/database.yml
