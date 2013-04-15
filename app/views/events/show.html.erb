@@ -1,20 +1,22 @@
-<p id="notice"><%= notice %></p>
-
 <p>
   <b>Title:</b>
   <%= @event.title %>
 </p>
 
 <p>
+  <b>Location:</b>
+  <%= @event.location.name %>
+</p>
+
+<p>
   <b>Start:</b>
-  <%= @event.start %>
+  <%= @event.start.strftime('%a %B %d %l:%M %p') %>
 </p>
 
 <p>
   <b>End:</b>
-  <%= @event.end %>
+  <%= @event.end.strftime('%a %B %d %l:%M %p') %>
 </p>
 
 
-<%= link_to 'Edit', edit_event_path(@event) %> |
-<%= link_to 'Back', events_path %>
+<button class="btn" type="button" onclick="window.location.href='<%=events_path%>'">Back</button>

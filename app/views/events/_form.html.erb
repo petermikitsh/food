@@ -1,7 +1,7 @@
 <%= form_for(@event) do |f| %>
   <% if @event.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@event.errors.count, "error") %> prohibited this event from being saved:</h2>
+      <h3><%= pluralize(@event.errors.count, "error") %> prohibited this event from being saved:</h3>
 
       <ul>
       <% @event.errors.full_messages.each do |msg| %>
@@ -12,23 +12,26 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :title %><br />
+    <%= f.label :title %>
     <%= f.text_field :title %>
   </div>
   <div class="field">
-    <%= f.label :start %><br />
+    <%= f.label :start %>
     <%= f.datetime_select :start %>
   </div>
   <div class="field">
-    <%= f.label :end %><br />
+    <%= f.label :end %>
     <%= f.datetime_select :end %>
   </div>
   <div class="field">
-    <%= f.label :location_id %><br />
+    <%= f.label :location_id %>
     <%= collection_select(:event, :location_id, Location.all, :id, :name) %>
   </div>
   <br />
-  <div class="actions">
-    <%= f.submit %>
+
+  <div class="button-group">
+    <button class="btn btn-primary" type="submit">Submit</button>
+    <button class="btn" type="button" onclick="window.location.href='<%=events_path%>'">Cancel</button>
   </div>
+
 <% end %>
