@@ -25,7 +25,7 @@
   </div>
   <div class="field">
     <%= f.label :location_id %><br />
-    <%= f.select(:location_id,Location.all,:prompt => true) %>
+    <%= collection_select(:event, :location_id, Location.all, :id, :name) %>
   </div>
   <br />
   <div class="actions">
