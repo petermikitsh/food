@@ -14,3 +14,8 @@ Location.create([{latitude: 43.084248, longitude: -77.677031, name: 'Infinity Qu
 Location.create([{latitude: 43.083652, longitude: -77.677224, name: 'Gosnell'}])
 Location.create([{latitude: 43.084318, longitude: -77.669156, name: 'Sundial'}])
 
+Food.create([{name: 'Pizza'}])
+Food.create([{name: 'Wings'}])
+Food.create([{name: 'Sandwiches'}])
+Food.create([{name: 'Dessert'}])
+Food.create([{name: 'Other'}])
