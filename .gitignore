@@ -3,3 +3,4 @@
 /tmp/*
 /db/*.sqlite3
 .project
+push_*.dat
