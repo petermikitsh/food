@@ -21,7 +21,7 @@ group :assets do
   # gem 'therubyracer', :platforms => :ruby
 
   gem 'uglifier', '>= 1.0.3'
-  gem "nested_form"
+  gem 'simple_form'
 end
 
 # jQuery
