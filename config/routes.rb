@@ -1,5 +1,6 @@
 FreeFoodRIT::Application.routes.draw do
-  resources :events, :map
+  resources :events
+  match 'map' => 'map#index'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
