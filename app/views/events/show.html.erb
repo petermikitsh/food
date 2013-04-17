@@ -10,12 +10,12 @@
 
 <p>
   <b>Start:</b>
-  <%= @event.start.strftime('%a %B %d %l:%M %p') %>
+  <%= @event.start_date.strftime("%a %b %e") %> <%= @event.start_time.strftime("%l:%M %p") %>
 </p>
 
 <p>
-  <b>End:</b>
-  <%= @event.end.strftime('%a %B %d %l:%M %p') %>
+  <b>Duration:</b>
+  <%= (@event.start_time + @event.duration.hours).strftime("%l:%M %p") %>
 </p>
 
 
