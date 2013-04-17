@@ -14,7 +14,7 @@
     <%= f.input :title, label: "Title", required: false %>
     <%= f.label "Event date" %>
     <%= f.text_field :start_date, required: false %>
-    <%= f.input :start_time, label: "Start Time", required: false %>
+    <%= f.input :start_time, :default => Time.now, :minute_step => 15, ampm: true, required: false %>
     <%= f.input :duration, label: "Duration (hours)", required: false,  collection: 1..5 %>
     <%= f.association :location, required: false %>
     <%= f.association :foods, required: false %>
