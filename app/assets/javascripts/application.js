@@ -13,4 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap
+//= require jquery.ui.datepicker
 //= require_tree .
+$(function () {
+ $("#event_start_date").datepicker();
+});
