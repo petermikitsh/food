@@ -1,0 +1,8 @@
+/* reset img max-width for bootstrap compatibity */
+img {
+  max-width: none;
+}
+
+.gmaps4rails_map {
+  height: 550px;
+}

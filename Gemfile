@@ -36,6 +36,9 @@ gem 'simple_form'
 # jQuery UI
 gem 'jquery-ui-rails'
 
+# Google Maps for Rails
+gem 'gmaps4rails'
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
