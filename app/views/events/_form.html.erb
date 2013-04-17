@@ -1,4 +1,4 @@
-<%= form_for(@event) do |f| %>
+<%= simple_form_for(@event) do |f| %>
 
   <% if @event.errors.any? %>
     <div class="alert alert-error">
@@ -11,27 +11,12 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :title %>
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :start %>
-    <%= f.datetime_select :start %>
-  </div>
-  <div class="field">
-    <%= f.label :end %>
-    <%= f.datetime_select :end %>
-  </div>
-  <div class="field">
-    <%= f.label :location_id %>
-    <%= collection_select(:event, :location_id, Location.all, :id, :name) %>
-  </div>
-  <br />
-
-  <div class="button-group">
+    <%= f.input :title, label: "Title", required: false %>
+    <%= f.input :start, label: "Start Time", required: false %>
+    <%= f.input :end, label: "End Time", required: false %>
+    <%= f.association :location, required: false %>
+    <%= f.association :foods, required: false %>
     <button class="btn btn-primary" type="submit">Submit</button>
     <button class="btn" type="button" onclick="window.location.href='<%=events_path%>'">Cancel</button>
-  </div>
 
 <% end %>
