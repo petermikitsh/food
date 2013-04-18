@@ -14,6 +14,8 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require jquery.ui.datepicker
+//= require chosen-jquery
+//= require scaffold
 //= require_tree .
 $(function () {
  $("#event_start_date").datepicker();
