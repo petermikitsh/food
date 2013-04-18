@@ -16,7 +16,7 @@
     <%= f.text_field :start_date, required: false %>
     <%= f.input :start_time, :default => Time.now, :minute_step => 15, ampm: true, required: false %>
     <%= f.input :duration, label: "Duration (hours)", required: false,  collection: 1..5 %>
-    <%= f.association :location, required: false %>
+    <%= f.association :location, :collection => Location.all(:order => "name"), required: false, input_html: { class: 'chzn-select' } %>
     <%= f.association :foods, required: false %>
 
     <button class="btn" type="button" onclick="window.location.href='<%=events_path%>'">Cancel</button>
