@@ -1,2 +1,28 @@
-<h1>Map</h1><br>
-<%= gmaps4rails(@json) %>
+
+<div class="span3">
+	<h3>Filter</h3>
+	<%= form_tag do %>
+
+		<label class="checkbox">
+	      <%= check_box_tag(:search_all) %> Search All Foods
+	    </label>
+
+		<%= select_tag  :foods,
+						options_from_collection_for_select(Food.all, :id, :name),
+						{:multiple => true} %>
+
+		<button class="btn btn-primary" type="submit">Filter</button>
+
+	<% end %>
+</div>
+
+<div class="span8">
+	<%= gmaps4rails(@json) %>
+</div>
+
+<script>
+$(document).ready(function() {
+	$('#search_all').change(function() {
+		$('#foods').prop("disabled", $(this).is(':checked'));
+    })});
+</script>
