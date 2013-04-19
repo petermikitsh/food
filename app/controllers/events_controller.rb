@@ -44,6 +44,8 @@ class EventsController < ApplicationController
 
     respond_to do |format|
       if @event.save
+        @event.update_attributes(:latitude => @event.location.latitude)
+        @event.update_attributes(:longitude => @event.location.longitude)
         format.html { redirect_to events_url, notice: 'Event was successfully created.' }
         format.json { render json: @event, status: :created, location: @event }
       else
@@ -60,6 +62,8 @@ class EventsController < ApplicationController
 
     respond_to do |format|
       if @event.update_attributes(params[:event])
+        @event.update_attributes(:latitude => @event.location.latitude)
+        @event.update_attributes(:longitude => @event.location.longitude)
         format.html { redirect_to events_url, notice: 'Event was successfully updated.' }
         format.json { head :no_content }
       else
