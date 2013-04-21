@@ -4,12 +4,26 @@
 	<%= form_tag do %>
 
 		<label class="checkbox">
-	      <%= check_box_tag(:search_all) %> Search All Foods
+	      <%= check_box_tag :search_this_day, 1, true %> Search Today
 	    </label>
 
-		<%= select_tag  :foods,
-						options_from_collection_for_select(Food.all, :id, :name),
-						{:multiple => true} %>
+		    <%= label_tag "Start Date" %>
+		    <%= text_field_tag  :start_date,
+		    					nil,
+		    					{:disabled => true} %>
+
+			<%= label_tag "End Date" %>
+		    <%= text_field_tag  :end_date,
+		    					nil,
+		    					{:disabled => true} %>
+
+		<label class="checkbox">
+	      <%= check_box_tag :search_all_foods, 1, true %> Search All Foods
+	    </label>
+
+			<%= select_tag  :foods,
+							options_from_collection_for_select(Food.all, :id, :name),
+							{:multiple => true, :disabled => true} %>
 
 		<button class="btn btn-primary" type="submit">Filter</button>
 
@@ -22,7 +36,12 @@
 
 <script>
 $(document).ready(function() {
-	$('#search_all').change(function() {
+	$('#search_this_day').change(function() {
+		$('#start_date').prop("disabled", $(this).is(':checked'));
+		$('#end_date').prop("disabled", $(this).is(':checked'));
+    });
+	$('#search_all_foods').change(function() {
 		$('#foods').prop("disabled", $(this).is(':checked'));
-    })});
+    });
+});
 </script>
