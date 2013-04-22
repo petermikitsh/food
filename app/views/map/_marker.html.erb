@@ -1,0 +1,24 @@
+<div class="accordion" id="accordion2">
+  <% query.each do |event| %>
+	  <div class="accordion-group">
+	    <div class="accordion-heading">
+	      <%= image_tag "f_logo.png" %>
+	      <%= image_tag "t_logo.png" %>
+	      <a class="accordion-toggle"
+	      	  data-toggle="collapse"
+	      	  data-parent="#accordion2"
+	      	  href="#collapse<%= event.id %>">
+	        <%= event.title %>
+	      </a>
+	    </div>
+	    <div id="collapse<%= event.id %>" class="accordion-body collapse">
+	      <div class="accordion-inner">
+	        <%= event.start_date.strftime("%B %e")%>,
+	        <%= event.start_time.strftime("%l:%M") %> - 
+	        <%= (event.start_time + event.duration.hours).strftime("%l:%M %P") %><br>
+	        Food(s): <% event.foods.each do |food| %><%= food.name %> <% end %>
+	      </div>
+	    </div>
+	  </div>
+  <% end %>
+</div>

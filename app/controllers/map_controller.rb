@@ -11,7 +11,7 @@ class MapController < ApplicationController
 	end
     
     @json = @query.all.to_gmaps4rails do |event, marker|
-    	marker.infowindow event.title
+    	marker.infowindow render_to_string :partial => "marker", :locals => { :query => @query.where(:location_id => event.location) }
     end
 
   end
