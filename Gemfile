@@ -42,6 +42,9 @@ gem 'gmaps4rails'
 # Autocomplete
 gem 'chosen-rails'
 
+# Tablesort
+gem 'jquery-tablesorter'
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

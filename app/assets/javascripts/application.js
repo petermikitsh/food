@@ -16,9 +16,12 @@
 //= require jquery.ui.datepicker
 //= require chosen-jquery
 //= require scaffold
+//= require jquery-tablesorter
+//= require jquery-tablesorter/jquery.tablesorter.widgets
 //= require_tree .
-$(function () {
- $("#event_start_date").datepicker();
+$(document).ready(function () {
+ $("#event_start_date").datepicker({ dateFormat: "yy-mm-dd" });
  $("#start_date").datepicker();
  $("#end_date").datepicker();
+ $(".tablesorter").tablesorter();
 });

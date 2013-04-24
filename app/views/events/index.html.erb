@@ -16,27 +16,31 @@
   </div>
 <% end %>
 
-<table class="table">
-  <tr>
-    <th>Title</th>
-    <th>Location</th>
-    <th>Start Date</th>
-    <th>End Time</th>
-    <th>Options</th>
-  </tr>
+<table class="table tablesorter">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Location</th>
+      <th>Start Date</th>
+      <th>End Time</th>
+      <th>Options</th>
+    </tr>
+  </thead>
 
-<% @events.each do |event| %>
-  <tr>
-    <td><%= event.title %></td>
-    <td><%= event.location.name %></td>
-    <td><%= event.start_date.strftime("%a %b %e") %> <%= event.start_time.strftime("%l:%M %p") %></td>
-    <td><%= (event.start_time + event.duration.hours).strftime("%l:%M %p") %></td> 
-    <td>
-      <%= link_to 'Edit', edit_event_path(event) %> | 
-      <%= link_to 'Delete', event, method: :delete, data: { confirm: 'Are you sure?' } %>
-    </td>
-  </tr>
-<% end %>
+  <tbody>
+    <% @events.each do |event| %>
+      <tr>
+        <td><%= event.title %></td>
+        <td><%= event.location.name %></td>
+        <td><%= event.start_date.strftime("%a %b %e") %> <%= event.start_time.strftime("%l:%M %p") %></td>
+        <td><%= (event.start_time + event.duration.hours).strftime("%l:%M %p") %></td> 
+        <td>
+          <%= link_to 'Edit', edit_event_path(event) %> | 
+          <%= link_to 'Delete', event, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
 </table>
 
 <br />
