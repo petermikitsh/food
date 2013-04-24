@@ -43,3 +43,8 @@ background-image: url(data:image/gif;base64,R0lGODlhFQAEAIAAACMtMP///yH5BAEAAAEA
 .tablesorter-headerDesc {
 background-image: url(data:image/gif;base64,R0lGODlhFQAEAIAAACMtMP///yH5BAEAAAEALAAAAAAVAAQAAAINjB+gC+jP2ptn0WskLQA7);
 }
+
+div.infobox {
+	width:200px;
+	height:150px;
+}

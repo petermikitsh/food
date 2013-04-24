@@ -31,6 +31,7 @@
 
 <div class="span8">
 	<%= gmaps4rails(@json) %>
+	<%= render(:partial => 'share') %>
 </div>
 
 <script>
@@ -43,5 +44,13 @@ $(document).ready(function() {
 		$('#foods').prop("disabled", $(this).is(':checked'));
     });
     $('#search_all_foods').prop("disabled", true);
+    $('#share').on('hidden', function () {
+    	$("#modal_title").empty();
+    	$("#modal_body").empty();
+	});
+    $('#share').on('shown', function () {
+  		$('#modal_title').append("Post to " + site);
+  		$('#modal_body').append("Free Food at " + message + "!");
+	});
 });
 </script>
