@@ -1,3 +1,10 @@
+<% if !@notice.nil? %>
+  <div class="alert alert-warning">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    <%= @notice %>
+  </div>
+<% end %>
+
 <div class="span3">
 	<h3>Filter</h3>
 	<%= form_tag do %>
@@ -30,7 +37,7 @@
 </div>
 
 <div class="span8">
-	<%= gmaps4rails(@json) %>
+	<%= gmaps("markers" =>  {"data" => @json}, "map_options" => {"center_latitude" => 43.084342, "center_longitude" => -77.672653, "zoom" => 15}) %>
 	<%= render(:partial => 'share') %>
 </div>
 
