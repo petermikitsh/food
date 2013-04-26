@@ -15,12 +15,12 @@
 
 		    <%= label_tag "Start Date" %>
 		    <%= text_field_tag  :start_date,
-		    					@q_start_date,
-		    					{:disabled => @q_start_date.nil?} %>
+		    					@q_start_date.strftime("%m/%d/%Y"),
+		    					{:disabled => @q_start_date.nil?} %>	
 
 			<%= label_tag "End Date" %>
 		    <%= text_field_tag  :end_date,
-		    					@q_end_date,
+		    					@q_end_date.strftime("%m/%d/%Y"),
 		    					{:disabled => @q_end_date.nil?} %>
 
 		<label class="checkbox">
@@ -37,7 +37,14 @@
 </div>
 
 <div class="span8">
-	<%= gmaps("markers" =>  {"data" => @json}, "map_options" => {"center_latitude" => 43.084342, "center_longitude" => -77.672653, "zoom" => 15}) %>
+
+	<%= gmaps("markers" =>  {"data" => @json},
+		"map_options" => {
+			"auto_adjust" => false,
+			"center_latitude" => 43.084342,
+			"center_longitude" => -77.672653,
+			"zoom" => 15}) %>
+
 	<%= render(:partial => 'share') %>
 </div>
 
