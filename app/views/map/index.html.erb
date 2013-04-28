@@ -1,7 +1,32 @@
 <%= render(:partial => 'shared/alertwarning') %>
 
 <div class="span3">
-	<%= render(:partial => 'filter') %>
+	<div class="accordion" id="accordionMapIndex">
+		<div class="accordion-group">
+			<div class="accordion-heading">
+				<a data-toggle="collapse" data-parent="#accordionMapIndex" href="#collapseFilter">
+					<h3>Filter Map</h3>
+				</a>
+			</div>
+			<div id="collapseFilter" class="accordion-body collapse in">
+		  		<div class="accordion-inner">
+					<%= render(:partial => 'filter') %>
+		  		</div>
+			</div>
+		</div>
+		<div class="accordion-group">
+		  	<div class="accordion-heading">
+		  		<a data-toggle="collapse" data-parent="#accordionMapIndex" href="#collapseAddEvent">
+		  			<h3>Add Event</h3>
+		  		</a>
+			</div>
+			<div id="collapseAddEvent" class="accordion-body collapse">
+		  		<div class="accordion-inner">
+					<%= render 'events/form' %>
+		  		</div>
+			</div>
+		</div>
+	</div>
 </div>
 
 <div class="span8">

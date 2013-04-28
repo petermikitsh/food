@@ -53,3 +53,20 @@ div.infobox {
 	float: left;
 	left: -5px;
 }
+
+.accordion a {
+	text-decoration: none;
+	color: #333333;
+}
+
+.accordion form {
+	margin: 0px;
+}
+
+.accordion h3 {
+	line-height: 25px;
+}
+
+#event_start_time_4i, #event_start_time_5i {
+	width: 105px;
+}

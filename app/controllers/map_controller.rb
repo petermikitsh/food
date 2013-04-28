@@ -21,5 +21,7 @@ class MapController < ApplicationController
                                        :locals => {:query => @query.where(:location_id => event.location) }
   end
 
+  @event = Event.new
+
   end
 end
