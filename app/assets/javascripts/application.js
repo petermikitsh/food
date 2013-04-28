@@ -20,8 +20,6 @@
 //= require jquery-tablesorter/jquery.tablesorter.widgets
 //= require_tree .
 $(document).ready(function () {
- $("#event_start_date").datepicker({ dateFormat: "yy-mm-dd" });
  $("#start_date").datepicker();
  $("#end_date").datepicker();
- $(".tablesorter").tablesorter();
 });

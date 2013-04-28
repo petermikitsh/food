@@ -1,70 +1,9 @@
-<% if !@notice.nil? %>
-  <div class="alert alert-warning">
-    <button class="close" data-dismiss="alert">&times;</button>
-    <%= @notice %>
-  </div>
-<% end %>
+<%= render(:partial => 'shared/alertwarning') %>
 
 <div class="span3">
-	<h3>Filter</h3>
-	<%= form_tag do %>
-
-		<label class="checkbox">
-	      <%= check_box_tag :search_this_day, 1, @q_start_date.nil? %> Search Today
-	    </label>
-
-		    <%= label_tag "Start Date" %>
-		    <%= text_field_tag  :start_date,
-		    					@q_start_date.strftime("%m/%d/%Y"),
-		    					{:disabled => @q_start_date.nil?} %>	
-
-			<%= label_tag "End Date" %>
-		    <%= text_field_tag  :end_date,
-		    					@q_end_date.strftime("%m/%d/%Y"),
-		    					{:disabled => @q_end_date.nil?} %>
-
-		<label class="checkbox">
-	      <%= check_box_tag :search_all_foods, 1, true %> Search All Foods
-	    </label>
-
-			<%= select_tag  :foods,
-							options_from_collection_for_select(Food.all, :id, :name),
-							{:multiple => true, :disabled => true} %>
-
-		<button class="btn btn-primary" type="submit">Filter</button>
-
-	<% end %>
+	<%= render(:partial => 'filter') %>
 </div>
 
 <div class="span8">
-
-	<%= gmaps("markers" =>  {"data" => @json},
-		"map_options" => {
-			"auto_adjust" => false,
-			"center_latitude" => 43.084342,
-			"center_longitude" => -77.672653,
-			"zoom" => 15}) %>
-
-	<%= render(:partial => 'share') %>
+	<%= render(:partial => 'gmaps') %>
 </div>
-
-<script>
-$(document).ready(function() {
-	$('#search_this_day').change(function() {
-		$('#start_date').prop("disabled", $(this).is(':checked'));
-		$('#end_date').prop("disabled", $(this).is(':checked'));
-    });
-	$('#search_all_foods').change(function() {
-		$('#foods').prop("disabled", $(this).is(':checked'));
-    });
-    $('#search_all_foods').prop("disabled", true);
-    $('#share').on('hidden', function () {
-    	$("#modal_title").empty();
-    	$("#modal_body").empty();
-	});
-    $('#share').on('shown', function () {
-  		$('#modal_title').append("Post to " + site);
-  		$('#modal_body').append("Free Food at " + message + "!");
-	});
-});
-</script>
