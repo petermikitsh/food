@@ -67,6 +67,11 @@ div.infobox {
 	line-height: 25px;
 }
 
+.accordion-button {
+	margin-right: 10px;
+	margin-top: 5px;
+}
+
 #event_start_time_4i, #event_start_time_5i {
 	width: 105px;
 }
