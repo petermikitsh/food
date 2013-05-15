@@ -1,3 +1,147 @@
 @import "bootstrap";
-body { padding-top: 60px; }
+
+// Variables
+
+// Colors
+// -------------------------
+$orange: #F36E21;
+$offwhite: #FFF8EF;
+$black: #000;
+$white: #FFF;
+
+// Body
+// -------------------------
+$textColor: $offwhite;
+$altTextColor: $black;
+
+// Links
+// -------------------------
+$linkColor:       $orange;
+$linkColorHover:  darken($linkColor, 15%);
+
+// Buttons
+// -------------------------
+$btnPrimaryBackground:	$linkColor;
+
+// Overrides
+// -------------------------
+a {
+  color: $linkColor;
+  &:hover { color: $linkColorHover; }
+}
+
+body {
+  background: url('rit.png') {
+    attachment:fixed;
+    position:center top;
+    repeat: no-repeat;
+  }
+  color: $textColor;
+  padding-bottom: 60px;
+}
+
+table thead th{
+  background-repeat: no-repeat;
+  background-position: center right;
+}
+
+.accordion {
+  form { margin: 0px; }
+  h3 { line-height: 25px; }
+  .accordion-button {
+    margin-right: 10px;
+    margin-top: 5px;
+  }
+  .accordion-heading {
+    margin-left: 5px;
+    .accordion-toggle {
+      display: inline;
+      vertical-align: middle;
+    }
+  }
+  .accordion-group {
+    background-color: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    a {
+      text-decoration: none;
+      color: $linkColor;
+      &:hover { color: $linkColorHover; }
+    }
+  }
+}
+
+.alert {
+  -webkit-opacity: 0.8;
+  .close {
+    float: left;
+    left: -5px;
+  }
+  .notice {
+    opacity: 1.0;
+  }
+}
+
+.btn-primary {
+  background-color: $orange;
+  background-image: linear-gradient(to bottom, lighten($orange, 10%), $orange);
+  &:hover { background-color: $orange; }
+}
+
+.chzn-container {
+  color: $black;
+}
+
+#event_start_time_4i, #event_start_time_5i {
+  width: 105px;
+}
+
+.infobox {
+  width:200px;
+  height:150px;
+}
+
+.map_container {
+  border: {
+    style: solid;
+    width: 1px;
+    radius: 4px;
+  }
+  -webkit-border-radius: 4px;
+}
+
+.navbar {
+  background-color: rgba(0,0,0,0.2);
+  margin-bottom: 20px;
+  .brand {
+    color: $linkColor;
+    text-shadow: none;
+  }
+  .nav > li > a {
+    &:hover {
+      color: darken($white, 20%);
+    }
+    text-shadow: none;
+  }
+}
+
+.navbar-fixed-top {
+  position: relative;
+}
+
+.tablesorter {
+  .tablesorter-header {
+    font-size: 16pt;
+  }
+  .tablesorter-header {
+    background-image: url('sort.gif');
+  }
+  .tablesorter-headerAsc {
+    background-image: url('sortAsc.gif');
+  }
+  .tablesorter-headerDesc {
+    background-image: url('sortDes.gif');
+  }
+}
+
+
 @import "bootstrap-responsive";
