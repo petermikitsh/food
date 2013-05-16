@@ -8,6 +8,7 @@ $orange: #F36E21;
 $offwhite: #FFF8EF;
 $black: #000;
 $white: #FFF;
+$transparent: rgba(0, 0, 0, 0.2);
 
 // Body
 // -------------------------
@@ -45,6 +46,14 @@ table thead th{
   background-position: center right;
 }
 
+.alert
+{
+  background-color: $transparent;
+  text-shadow: none;
+  border: 1px solid $transparent;
+  font-weight: bold;
+}
+
 .accordion {
   form { margin: 0px; }
   h3 { line-height: 25px; }
@@ -64,8 +73,8 @@ table thead th{
 
 .accordion-transparent {
   .accordion-group {
-    background-color: rgba(0, 0, 0, 0.2);
-    border: 1px solid rgba(0, 0, 0, 0.2);
+    background-color: $transparent;
+    border: 1px solid $transparent;
   }
 }
 
@@ -98,6 +107,10 @@ table thead th{
   color: $black;
 }
 
+.close {
+  color: $white;
+}
+
 #event_start_time_4i, #event_start_time_5i {
   width: 105px;
 }
@@ -117,7 +130,7 @@ table thead th{
 }
 
 .navbar {
-  background-color: rgba(0,0,0,0.2);
+  background-color: $transparent;
   margin-bottom: 20px;
   .brand {
     color: $linkColor;
@@ -136,6 +149,9 @@ table thead th{
 }
 
 .tablesorter {
+  a {
+    font-weight: bold;
+  }
   .tablesorter-header {
     font-size: 16pt;
   }
