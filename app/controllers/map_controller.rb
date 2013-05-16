@@ -19,6 +19,9 @@ class MapController < ApplicationController
   @json = @query.to_gmaps4rails do |event, marker|
   	marker.infowindow render_to_string :partial => "marker",
                                        :locals => {:query => @query.where(:location_id => event.location) }
+    marker.picture({  :picture => 'assets/marker.png',
+                      :width   => 21,
+                      :height  => 33 })
   end
 
   @event = Event.new
