@@ -53,16 +53,28 @@ table thead th{
     margin-top: 5px;
   }
   .accordion-heading {
+    a { text-decoration: none; }
     margin-left: 5px;
     .accordion-toggle {
       display: inline;
       vertical-align: middle;
     }
   }
+}
+
+.accordion-transparent {
   .accordion-group {
     background-color: rgba(0, 0, 0, 0.2);
     border: 1px solid rgba(0, 0, 0, 0.2);
   }
+}
+
+.accordion-solid {
+    color: $altTextColor;
+    a {
+      color: $altTextColor;
+      text-decoration: none;
+    }
 }
 
 .alert {
